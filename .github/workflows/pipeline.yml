@@ -13,10 +13,27 @@ jobs:
         - gcp
         environment:
         - dev
+        location:
+        - us-east4
+    steps:
+      - uses: anishathalye/proof-html@v1.1.0
+        name: ${{ matrix.cloud }}_${{ matrix.environment }}_${{ matrix.location }}
+        with:
+          directory: ./
+    
+  test:
+    runs-on: ["self-hosted","gcp","ephemeral"]
+    strategy:
+      fail-fast: false
+      matrix:
+        cloud:
+        - gcp
+        environment:
+        - dev
         # - stage
         # - prod
         location:
-        - us-west2
+        # - us-west2
         - us-east4
     steps:
       - uses: anishathalye/proof-html@v1.1.0
