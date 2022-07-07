@@ -15,6 +15,7 @@ jobs:
         - dev
         location:
         - us-east4
+        - us-west2
     steps:
       - uses: anishathalye/proof-html@v1.1.0
         name: ${{ matrix.cloud }}_${{ matrix.environment }}_${{ matrix.location }}
