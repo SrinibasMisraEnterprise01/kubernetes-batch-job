@@ -5,7 +5,7 @@ on:
   
 jobs:
   build:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -20,5 +20,6 @@ jobs:
         - us-east4
     steps:
       - uses: anishathalye/proof-html@v1.1.0
+        name: ${{ matrix.cloud }}_${{ matrix.environment }}_${{ matrix.location }}
         with:
           directory: ./
