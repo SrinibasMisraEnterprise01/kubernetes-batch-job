@@ -31,10 +31,10 @@ jobs:
         - gcp
         environment:
         - dev
-        # - stage
-        # - prod
+        - stage
+        - prod
         location:
-        # - us-west2
+        - us-west2
         - us-east4
     steps:
       - uses: anishathalye/proof-html@v1.1.0
